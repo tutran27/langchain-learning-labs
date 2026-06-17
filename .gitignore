@@ -1,0 +1,49 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.conda/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Build and packaging artifacts
+build/
+dist/
+*.egg-info/
+
+# LangChain / local data artifacts
+.langchain/
+langsmith/
+chroma/
+chroma_db/
+faiss_index/
+vectorstore/
+vectorstores/
+outputs/
+artifacts/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local assistant settings
+.claude/settings.local.json
