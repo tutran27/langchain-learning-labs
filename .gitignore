@@ -38,6 +38,7 @@ vectorstore/
 vectorstores/
 outputs/
 artifacts/
+storage/
 
 # Editor and OS files
 .vscode/
