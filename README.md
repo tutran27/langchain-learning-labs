@@ -57,6 +57,12 @@ python -m labs.lab01_foundation.lab_04_batch_stream_retry.batch_stream_retry
 python -m labs.lab02_structured_output.lab_01_basic_schema.json_output_parser
 ```
 
+## 📓 Google Colab
+
+Link Colab luyện tập:
+
+- [Open in Colab](https://colab.research.google.com/drive/1zXc0W-qR1r0n4Tu4KS7yD_T7KAfLwMIt?authuser=4#scrollTo=Jp4Y_gGBP_EW)
+
 ## 📝 Ghi chú
 
 - Repo hiện ưu tiên flow học tập và khả năng đọc code hơn là tối ưu production.
