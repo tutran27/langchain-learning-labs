@@ -1,7 +1,7 @@
 from langchain_core.prompts import ChatPromptTemplate
 
 from shared.utils import _langchain_to_hf_prompt, add_tokenize
-from labs.lab01_foundation.lab_01_chat_model.llm_model import LLMModel
+from labs.lab01_foundation.llm_model import LLMModel
 
 
 def _build_prompt_template(bot_name, question):

@@ -5,8 +5,8 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableLambda
 from pydantic import BaseModel, Field
 
-from labs.lab01_foundation.lab_01_chat_model.llm_model import LLMModel
-from labs.lab02_structured_output.lab_04_routing_with_schema.prompt import (
+from labs.lab01_foundation.llm_model import LLMModel
+from labs.lab02_structured_output.prompt import (
     ROUTING_PROMPT,
     TASK_PROMPT,
 )

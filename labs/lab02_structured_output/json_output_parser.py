@@ -2,8 +2,8 @@ from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.runnables import RunnableLambda
 from pydantic import BaseModel, Field
 
-from labs.lab01_foundation.lab_01_chat_model.llm_model import LLMModel
-from labs.lab01_foundation.lab_02_messages_and_prompts.prompt_template import (
+from labs.lab01_foundation.llm_model import LLMModel
+from labs.lab01_foundation.prompt_template import (
     _build_chat_prompt_template,
 )
 from shared.utils import beauty_json_output

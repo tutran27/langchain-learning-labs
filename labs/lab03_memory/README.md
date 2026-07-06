@@ -1,16 +1,22 @@
-# Lab 04 · Memory
+# Lab 03 · Memory
 
 > 🧠 Khu vực thực hành các pattern memory trong ứng dụng LLM.
 
-## 🎯 Mục tiêu
+## 📂 Nội dung hiện có
 
-Lab này dự kiến sẽ bao gồm:
+| File | Trạng thái |
+| --- | --- |
+| `short_term_memory.py` | Placeholder |
+| `multi_user_threads.py` | Placeholder |
+| `memory_summarization.py` | Placeholder |
+| `long_term_preferences.py` | Placeholder |
 
-- Short-term memory
-- Multi-user conversation threads
-- Summarization memory
-- Long-term preferences
+## ▶️ Cách chạy
 
-## 📌 Trạng thái
+```powershell
+python -m labs.lab03_memory.short_term_memory
+```
 
-🚧 Nội dung đang được cập nhật.
+## 📌 Ghi chú
+
+Lab này đang ở giai đoạn dựng khung file để chuẩn bị triển khai nội dung chi tiết.

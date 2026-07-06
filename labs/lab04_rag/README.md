@@ -1,18 +1,20 @@
-# Lab 05 · RAG
+# Lab 04 · RAG
 
 > 📚 Khu vực thực hành Retrieval-Augmented Generation.
 
-## 🎯 Mục tiêu
+## 📂 Nội dung hiện có
 
-Lab này dự kiến sẽ bao gồm:
+| File | Trạng thái |
+| --- | --- |
+| `documents_splitters.py` | Placeholder |
+| `embeddings_vectorstore.py` | Placeholder |
+| `basic_rag_chain.py` | Placeholder |
+| `rag_with_sources.py` | Placeholder |
+| `query_rewriting.py` | Placeholder |
+| `agentic_rag.py` | Placeholder |
 
-- Xử lý documents và text splitting
-- Embedding và vector store
-- Basic RAG chain
-- RAG with sources
-- Query rewriting
-- Agentic RAG
+## ▶️ Cách chạy
 
-## 📌 Trạng thái
-
-🚧 Nội dung đang được cập nhật.
+```powershell
+python -m labs.lab04_rag.documents_splitters
+```

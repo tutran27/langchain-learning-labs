@@ -1,45 +1,40 @@
 # LangChain Learning Labs
 
-> 🚀 Bộ bài thực hành LangChain theo hướng học từng bước, từ nền tảng đến các workflow nâng cao như structured output, tools, memory, RAG và agentic patterns.
+> 🚀 Bộ bài thực hành LangChain theo hướng học từng bước, từ foundation đến structured output, memory, RAG, tools và agentic patterns.
 
 ## 🎯 Mục tiêu
 
-Repository này được xây dựng để:
+Repository này được tổ chức để:
 
 - Học LangChain theo từng lab nhỏ, dễ chạy và dễ mở rộng
 - Thực hành trực tiếp với Hugging Face model, prompt và LCEL
 - Làm quen với structured output, parser và schema
-- Chuẩn bị nền tảng cho các bài về agent, memory, RAG và guardrails
+- Chuẩn bị nền tảng cho agent, memory, RAG và guardrails
 
-## 🗂️ Cấu trúc thư mục
+## 🗂️ Cấu trúc dự án
 
 | Thư mục | Vai trò |
 | --- | --- |
-| `labs/` | Khu vực bài thực hành chính, chia theo từng chủ đề |
-| `shared/` | Các thành phần dùng chung như config, utility, helper |
-| `projects/` | Khu vực dành cho project hoặc demo lớn hơn |
-| `tests/` | Khu vực dành cho test |
+| `labs/` | Khu vực bài thực hành chính |
+| `shared/` | Config, utils và helper dùng chung |
+| `projects/` | Khu vực dành cho project/demo lớn hơn |
+| `tests/` | Khu vực test |
 
 ## 📚 Hệ thống Lab
 
-Hiện tại repo tập trung trước vào:
+Các lab hiện tại đã được làm phẳng cấu trúc: mỗi lab chỉ còn một cấp file `.py` trong thư mục cha, giúp code dễ tìm và dễ chạy hơn.
 
-- `lab01_foundation`: model, prompt, LCEL, batch/stream/retry
-- `lab02_structured_output`: string parser, JSON parser, classification
-
-Các nhóm lab tiếp theo đã có khung README và sẽ được bổ sung dần:
-
-- `lab03_tools_agents`
-- `lab04_memory`
-- `lab05_rag`
+- `lab01_foundation`
+- `lab02_structured_output`
+- `lab03_memory`
+- `lab04_rag`
+- `lab05_tools_agents`
 - `lab06_guardrails_streaming`
 - `lab07_agentic_patterns`
 
-Xem thêm tại: [labs/README.md](D:/AI_LABs/langchain-learning-labs/labs/README.md)
+Xem tổng quan đầy đủ tại [labs/README.md](D:/AI_LABs/langchain-learning-labs/labs/README.md).
 
 ## ⚙️ Cài đặt
-
-Từ root project:
 
 ```powershell
 python -m venv .venv
@@ -49,21 +44,20 @@ pip install -r requirements.txt
 
 Nếu dùng GPU NVIDIA, nên đảm bảo bộ `torch / torchvision / torchaudio` được cài đồng bộ theo đúng CUDA runtime.
 
-## ▶️ Chạy thử
+## ▶️ Chạy nhanh
 
 ```powershell
-python -m labs.lab01_foundation.lab_03_chain_lcel.lcel_basic
-python -m labs.lab01_foundation.lab_04_batch_stream_retry.batch_stream_retry
-python -m labs.lab02_structured_output.lab_01_basic_schema.json_output_parser
+python -m labs.lab01_foundation.lcel_basic
+python -m labs.lab01_foundation.batch_stream_retry
+python -m labs.lab02_structured_output.json_output_parser
+python -m labs.lab02_structured_output.routing_chain
 ```
 
 ## 📓 Google Colab
-
-Link Colab luyện tập:
 
 - [Open in Colab](https://colab.research.google.com/drive/1zXc0W-qR1r0n4Tu4KS7yD_T7KAfLwMIt?authuser=4#scrollTo=Jp4Y_gGBP_EW)
 
 ## 📝 Ghi chú
 
-- Repo hiện ưu tiên flow học tập và khả năng đọc code hơn là tối ưu production.
-- Một số môi trường Windows + CUDA có thể cần tinh chỉnh thêm dependency để tránh xung đột thư viện native.
+- Repo ưu tiên flow học tập và khả năng đọc code hơn là tối ưu production.
+- Một số lab mới đang ở trạng thái placeholder để giữ cấu trúc đồng nhất trước khi triển khai nội dung chi tiết.

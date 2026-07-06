@@ -1,20 +1,20 @@
-# Lab 03 · Tools & Agents
+# Lab 05 · Tools & Agents
 
-> 🛠️ Khu vực dành cho các bài thực hành về tool calling và xây dựng agent workflow.
+> 🛠️ Khu vực thực hành tool calling và xây dựng agent workflow.
 
-## 🎯 Mục tiêu
+## 📂 Nội dung hiện có
 
-Lab này dự kiến sẽ bao gồm:
+| File | Trạng thái |
+| --- | --- |
+| `basic_tools.py` | Placeholder |
+| `tools_with_pydantic.py` | Placeholder |
+| `manual_tool_calling.py` | Placeholder |
+| `create_agent.py` | Placeholder |
+| `multi_tool_agent.py` | Placeholder |
+| `tool_runtime_context.py` | Placeholder |
 
-- Định nghĩa tool cơ bản
-- Truyền schema cho tool
-- Ghép nhiều tool vào cùng một agent
-- Điều phối tool runtime context
+## ▶️ Cách chạy
 
-## 📌 Trạng thái
-
-🚧 Nội dung đang được cập nhật.
-
-## 📎 Ghi chú
-
-Sau khi hoàn thiện, đây sẽ là bước tiếp theo phù hợp sau `lab02_structured_output`.
+```powershell
+python -m labs.lab05_tools_agents.basic_tools
+```

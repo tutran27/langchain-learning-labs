@@ -1,17 +1,19 @@
 # Lab 07 · Agentic Patterns
 
-> 🤖 Khu vực tổng hợp các pattern agentic nâng cao để xây dựng workflow thông minh hơn.
+> 🤖 Khu vực tổng hợp các pattern agentic nâng cao.
 
-## 🎯 Mục tiêu
+## 📂 Nội dung hiện có
 
-Lab này dự kiến sẽ bao gồm:
+| File | Trạng thái |
+| --- | --- |
+| `router_agent.py` | Placeholder |
+| `planner_executor.py` | Placeholder |
+| `reflection_self_check.py` | Placeholder |
+| `permission_aware_agent.py` | Placeholder |
+| `failure_recovery.py` | Placeholder |
 
-- Router agent
-- Planner / executor
-- Reflection / self-check
-- Permission-aware agent
-- Failure recovery
+## ▶️ Cách chạy
 
-## 📌 Trạng thái
-
-🚧 Nội dung đang được cập nhật.
+```powershell
+python -m labs.lab07_agentic_patterns.router_agent
+```

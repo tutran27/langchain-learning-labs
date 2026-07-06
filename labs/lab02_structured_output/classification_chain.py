@@ -3,7 +3,7 @@ from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.runnables import RunnableLambda, RunnablePassthrough
 from pydantic import BaseModel, Field
 
-from labs.lab01_foundation.lab_01_chat_model.llm_model import LLMModel
+from labs.lab01_foundation.llm_model import LLMModel
 from shared.utils import beauty_json_output, _langchain_to_hf_prompt, add_tokenize
 
 from typing import Literal

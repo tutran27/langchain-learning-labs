@@ -1,8 +1,8 @@
 from langchain_core.output_parsers import StrOutputParser, JsonOutputParser
 from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 
-from labs.lab01_foundation.lab_01_chat_model.llm_model import LLMModel
-from labs.lab01_foundation.lab_02_messages_and_prompts.prompt_template import _build_chat_prompt_template
+from labs.lab01_foundation.llm_model import LLMModel
+from labs.lab01_foundation.prompt_template import _build_chat_prompt_template
 
 def chain_lcel(bot_name: str, question: str):
     output_parser = StrOutputParser()
