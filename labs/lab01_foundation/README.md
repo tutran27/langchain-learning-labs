@@ -11,21 +11,12 @@
 
 ## 📂 Nội dung hiện có
 
-| File | Mô tả |
+| File | Mô tả | Cách chạy |
 | --- | --- |
-| `llm_model.py` | Wrapper load model, tokenizer và Hugging Face pipeline |
-| `prompt_template.py` | Xây dựng prompt template và chat prompt template |
-| `lcel_basic.py` | Chain cơ bản với `RunnableLambda` và LLM |
-| `batch_stream_retry.py` | Demo `batch`, `stream` và `retry` |
-
-## ▶️ Cách chạy
-
-```powershell
-python -m labs.lab01_foundation.llm_model
-python -m labs.lab01_foundation.prompt_template
-python -m labs.lab01_foundation.lcel_basic
-python -m labs.lab01_foundation.batch_stream_retry
-```
+| `llm_model.py` | Wrapper load model, tokenizer và Hugging Face pipeline | `python -m labs.lab01_foundation.llm_model` |
+| `prompt_template.py` | Xây dựng prompt template và chat prompt template | `python -m labs.lab01_foundation.prompt_template` |
+| `lcel_basic.py` | Chain cơ bản với `RunnableLambda` và LLM | `python -m labs.lab01_foundation.lcel_basic` |
+| `batch_stream_retry.py` | Demo `batch`, `stream` và `retry` | `python -m labs.lab01_foundation.batch_stream_retry` |
 
 ## ✅ Trạng thái
 

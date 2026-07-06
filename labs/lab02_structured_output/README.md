@@ -12,25 +12,15 @@
 
 ## 📂 Nội dung hiện có
 
-| File | Mô tả |
+| File | Mô tả | Cách chạy |
 | --- | --- |
-| `str_output_parser.py` | Parse output dạng text đơn giản |
-| `json_output_parser.py` | Parse output JSON với `JsonOutputParser` và schema Pydantic |
-| `classification_chain.py` | Phân loại yêu cầu theo category, sentiment và priority |
-| `extraction_chain.py` | Trích xuất thông tin khách hàng từ yêu cầu tự nhiên |
-| `multi_extraction_chain.py` | Trích xuất nhiều trường thông tin hơn trong một flow |
-| `routing_chain.py` | Route yêu cầu theo schema trước khi sinh response |
-| `prompt.py` | Prompt dùng chung cho routing |
-
-## ▶️ Cách chạy
-
-```powershell
-python -m labs.lab02_structured_output.str_output_parser
-python -m labs.lab02_structured_output.json_output_parser
-python -m labs.lab02_structured_output.classification_chain
-python -m labs.lab02_structured_output.extraction_chain
-python -m labs.lab02_structured_output.routing_chain
-```
+| `str_output_parser.py` | Parse output dạng text đơn giản | `python -m labs.lab02_structured_output.str_output_parser` |
+| `json_output_parser.py` | Parse output JSON với `JsonOutputParser` và schema Pydantic | `python -m labs.lab02_structured_output.json_output_parser` |
+| `classification_chain.py` | Phân loại yêu cầu theo category, sentiment và priority | `python -m labs.lab02_structured_output.classification_chain` |
+| `extraction_chain.py` | Trích xuất thông tin khách hàng từ yêu cầu tự nhiên | `python -m labs.lab02_structured_output.extraction_chain` |
+| `multi_extraction_chain.py` | Trích xuất nhiều trường thông tin hơn trong một flow | `python -m labs.lab02_structured_output.multi_extraction_chain` |
+| `routing_chain.py` | Route yêu cầu theo schema trước khi sinh response | `python -m labs.lab02_structured_output.routing_chain` |
+| `prompt.py` | Prompt dùng chung cho routing | Không chạy trực tiếp |
 
 ## ⚠️ Lưu ý
 

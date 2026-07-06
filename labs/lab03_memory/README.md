@@ -4,18 +4,12 @@
 
 ## 📂 Nội dung hiện có
 
-| File | Trạng thái |
+| File | Trạng thái | Cách chạy |
 | --- | --- |
-| `short_term_memory.py` | Placeholder |
-| `multi_user_threads.py` | Placeholder |
-| `memory_summarization.py` | Placeholder |
-| `long_term_preferences.py` | Placeholder |
-
-## ▶️ Cách chạy
-
-```powershell
-python -m labs.lab03_memory.short_term_memory
-```
+| `short_term_memory.py` | Placeholder | `python -m labs.lab03_memory.short_term_memory` |
+| `multi_user_threads.py` | Placeholder | `python -m labs.lab03_memory.multi_user_threads` |
+| `memory_summarization.py` | Placeholder | `python -m labs.lab03_memory.memory_summarization` |
+| `long_term_preferences.py` | Placeholder | `python -m labs.lab03_memory.long_term_preferences` |
 
 ## 📌 Ghi chú
 
