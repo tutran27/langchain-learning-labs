@@ -49,7 +49,7 @@ class LLMModel:
                 device_map="auto",
                 return_full_text=False,
                 clean_up_tokenization_spaces=False,
-                max_new_tokens=512,
+                max_new_tokens=2048,
             )
             self.llm = HuggingFacePipeline(pipeline=model_pipeline)
 
