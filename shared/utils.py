@@ -5,22 +5,53 @@ import re
 def beauty_json_output(data):
     print(json.dumps(data, indent=4, ensure_ascii=False))
 
+def _normalize_json_candidate(candidate):
+    try:
+        parsed = json.loads(candidate)
+        return json.dumps(parsed, ensure_ascii=False)
+    except json.JSONDecodeError:
+        return None
+
 def extract_response(text):
     """
     Extract the final structured response from model output.
 
     This helper is intended for cases where the model may emit extra
     reasoning/thinking text before the actual answer. It first looks for a
-    fenced ```json block, then falls back to the last JSON object found in the
-    text. If no JSON-like content is found, it returns the stripped raw text.
+    fenced ```json block, then falls back to the last valid JSON object or
+    array found in the text. If no JSON-like content is found, it returns the
+    stripped raw text.
     """
-    fenced_matches = re.findall(r"```json\s*([\s\S]*?)\s*```", text, flags=re.IGNORECASE)
-    if fenced_matches:
-        return fenced_matches[-1].strip()
+    if isinstance(text, (dict, list)):
+        return json.dumps(text, ensure_ascii=False)
 
-    object_matches = re.findall(r"(\{[\s\S]*\})", text)
-    if object_matches:
-        return object_matches[-1].strip()
+    if not isinstance(text, str):
+        return str(text).strip()
+
+    fenced_matches = re.findall(r"```json\s*([\s\S]*?)\s*```", text, flags=re.IGNORECASE)
+    for candidate in reversed(fenced_matches):
+        parsed = _normalize_json_candidate(candidate.strip())
+        if parsed is not None:
+            return parsed
+
+    decoder = json.JSONDecoder()
+    valid_candidates = []
+    for index, char in enumerate(text):
+        if char not in "{[":
+            continue
+        try:
+            parsed, end_index = decoder.raw_decode(text[index:])
+            normalized = json.dumps(parsed, ensure_ascii=False)
+            valid_candidates.append((index + end_index, parsed, normalized))
+        except json.JSONDecodeError:
+            continue
+
+    for _, parsed, normalized in reversed(valid_candidates):
+        if isinstance(parsed, dict):
+            return normalized
+
+    if valid_candidates:
+        return valid_candidates[-1][2]
 
     return text.strip()
 

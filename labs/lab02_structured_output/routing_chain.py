@@ -31,8 +31,8 @@ class RouteDecision(BaseModel):
 
 
 class Answering(BaseModel):
-    request_summary: str = Field(description="Tóm tắt yêu cầu của người dùng")
-    response: str = Field(description="Câu trả lời cho yêu cầu của người dùng")
+    question: str = Field(description="Câu hỏi gốc của người dùng")
+    response: str = Field(description="Câu trả lời ")
 
 # định nghĩa output parser cho route
 def _route_parser():
