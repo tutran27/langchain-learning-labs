@@ -1,9 +1,15 @@
 import os 
 import torch
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class Settings:
+    TAVILY_API_KEY = os.getenv("TAVILY_API_KEY","")
     HF_TOKEN = os.getenv("HF_TOKEN","")
-    LLM_MODEL = "Qwen/Qwen3.5-4B"
+    GROQ_API_KEY = os.getenv("GROQ_API_KEY","")
+    LLM_MODEL = "Qwen/Qwen3-4B-Instruct-2507"
+    GROQ_MODEL = "llama-3.1-8b-instant"
     QUANT_TYPE = True
     DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
