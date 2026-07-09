@@ -1,6 +1,8 @@
 from shared.config import settings
 import json
 import re
+from typing import Any
+from langchain_core.messages import BaseMessage, SystemMessage, HumanMessage, AIMessage
 
 def beauty_json_output(data):
     print(json.dumps(data, indent=4, ensure_ascii=False))
@@ -77,3 +79,61 @@ def add_tokenize(template, tokenizer):
         enable_thinking=settings.ENABLE_THINKING,
         )
     return tokenized
+
+#  ============================= HISTORY =======================================
+
+def print_title(title: str) -> None:
+    print("\n" + "=" * 70)
+    print(title)
+    print("=" * 70)
+
+
+def to_text(response: Any) -> str:
+    """
+    Chuẩn hóa output LLM về string.
+    Hỗ trợ cả:
+    - AIMessage có .content
+    - string
+    - object khác
+    """
+    if hasattr(response, "content"):
+        return response.content
+    return str(response)
+
+
+def render_messages(messages: list[BaseMessage]) -> str:
+    """
+    Convert message history thành text để đưa vào summarizer.
+    """
+    lines = []
+
+    for msg in messages:
+        role = getattr(msg, "type", "unknown")
+        content = getattr(msg, "content", str(msg))
+        lines.append(f"{role.upper()}: {content}")
+
+    return "\n".join(lines)
+
+
+def print_messages(messages: list[BaseMessage]) -> None:
+    for msg in messages:
+        role = getattr(msg, "type", "unknown")
+        content = getattr(msg, "content", str(msg))
+        print(f"[{role}] {content}")
+
+
+if __name__ == "__main__":
+    messages = [
+        SystemMessage(content="Bạn là trợ lý học tập AI."),
+        HumanMessage(content="Tên tôi là Thái."),
+        AIMessage(content="Chào Thái, tôi sẽ hỗ trợ bạn học AI."),
+        HumanMessage(content="Tôi đang ôn LangChain."),
+        AIMessage(content="LangChain là framework để xây dựng ứng dụng LLM."),
+        HumanMessage(content="Tôi muốn học tiếp Tool Calling."),
+        AIMessage(content="Tool Calling giúp LLM gọi hàm hoặc API bên ngoài."),
+        HumanMessage(content="Sau đó tôi muốn học LangGraph."),
+        AIMessage(content="LangGraph giúp xây workflow/agent bằng graph state."),
+        HumanMessage(content="Tôi thích câu trả lời có ví dụ code ngắn."),
+        AIMessage(content="Đã hiểu, tôi sẽ ưu tiên ví dụ code ngắn."),
+    ]
+    print(render_messages(messages))
