@@ -72,5 +72,5 @@ if __name__ == "__main__":
     print(result)
 
     print("================== GET WEATHER ======================")
-    result=get_weather("Hồ Chí Minh")
+    result=get_weather("Hà Nội")
     print(result)
