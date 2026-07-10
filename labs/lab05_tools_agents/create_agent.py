@@ -1,4 +1,6 @@
-from labs.lab05_tools_agents.basic_tools import search_tool, format_print, add, subtract
+import asyncio
+
+from labs.lab05_tools_agents.basic_tools import search_tool, calculate_tool
 from labs.lab01_foundation.llm_model import GroqLLMModel
 
 from langchain.agents import create_agent
@@ -9,8 +11,7 @@ def build_agent():
 
     tools = [
         search_tool,
-        add,
-        subtract,
+        calculate_tool,
     ]
 
     system_prompt = """
@@ -19,7 +20,7 @@ You are a tool-using assistant.
 Rules:
 1. If a relevant tool exists, you MUST call the tool before answering.
 2. Do NOT answer from your own knowledge when the request can be handled by a tool.
-3. For arithmetic, you MUST use `add` or `subtract`.
+3. For arithmetic or math formulas, you MUST use `calculate_tool`. When use 'calculate_tool', the input must be a mathematical formula so you must convert the user's request to a mathematical formula.
 4. For web search or factual lookup, you MUST use `search_tool`.
 5. If the user explicitly asks to use a tool, you must call that tool.
 6. Never skip a tool call just because you think you already know the answer.
@@ -52,17 +53,24 @@ def print_messages_log(messages):
     print("=================================")
 
 
+async def run_agent_query(agent, user_message):
+    return await agent.ainvoke(
+        {
+            "messages": [
+                {
+                    "role": "user",
+                    "content": user_message,
+                }
+            ]
+        }
+    )
+
+
 if __name__ == "__main__":
     agent = build_agent()
 
-    result = agent.invoke({
-        "messages": [
-            {
-                "role": "user",
-                "content": "Thời tiết ở Việt Nam hiện nay?"
-            }
-        ]
-    })
+    result = asyncio.run(
+        run_agent_query(agent, "Tính ((5*2+3) * (7+11)/2-20)*2+15")
+    )
 
     print_messages_log(result.get("messages", []))
-   

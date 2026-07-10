@@ -24,6 +24,7 @@ class Settings:
     MAX_SEQ_LEN=512
 
     APP_ID=os.getenv("APP_ID")
+    OPENWEATHERMAP_API_KEY=os.getenv("OPENWEATHERMAP_API_KEY")
 
 settings = Settings()
 
