@@ -23,6 +23,8 @@ class Settings:
     BATCH_SIZE=32
     MAX_SEQ_LEN=512
 
+    APP_ID=os.getenv("APP_ID")
+
 settings = Settings()
 
     

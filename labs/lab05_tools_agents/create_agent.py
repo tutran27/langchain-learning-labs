@@ -59,7 +59,7 @@ if __name__ == "__main__":
         "messages": [
             {
                 "role": "user",
-                "content": "Tìm thông tin của CR7 và cho tôi biết anh ấy sinh năm bao nhiêu?"
+                "content": "Thời tiết ở Việt Nam hiện nay?"
             }
         ]
     })
