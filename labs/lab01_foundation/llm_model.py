@@ -90,7 +90,6 @@ class GroqLLMModel:
     def invoke(self, prompt):
         return self.groq_chat().invoke(prompt)
 
-
 if __name__ == "__main__":
     model = HFLLMModel()
     print(model.invoke("Hi, how are you?"))

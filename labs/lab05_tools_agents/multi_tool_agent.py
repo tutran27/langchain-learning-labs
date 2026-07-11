@@ -191,33 +191,6 @@ def calculate_final_total(
         "total_price_after_shipping": total_price_after_shipping,
     }
 
-
-SYSTEM_PROMPT = """
-Bạn là trợ lý tính tiền đơn hàng.
-
-Quy tắc bắt buộc, phải tuân thủ nghiêm ngặt:
-1. Mỗi lượt phản hồi chỉ được gọi đúng 1 tool duy nhất.
-2. Tuyệt đối không gọi nhiều tool trong cùng một message.
-3. Tuyệt đối không gọi lại tool đã có kết quả hợp lệ trong ToolMessage, trừ khi người dùng yêu cầu làm mới dữ liệu.
-4. Tuyệt đối không tự đoán product_id, đơn giá, giảm giá, phí ship hoặc kết quả tính toán.
-5. Khi cần tính tổng tiền, bắt buộc gọi tool đúng thứ tự sau và không được bỏ bước:
-   - get_product_info
-   - get_member_discount
-   - get_shipping_fee
-   - calculate_final_total
-6. Tool sau chỉ được dùng dữ liệu lấy ra từ ToolMessage của tool trước.
-7. Ở bước calculate_final_total, chỉ được truyền đúng 5 tham số:
-   - product_id
-   - member_level
-   - shipping_method
-   - region
-   - quantity
-8. Sau khi calculate_final_total trả kết quả thành công, phải dừng gọi tool ngay và trả lời người dùng bằng tiếng Việt trong content.
-9. Nếu bất kỳ tool nào trả lỗi, phải dừng ngay, không gọi thêm tool, và giải thích lỗi cho người dùng.
-10. Không được lặp lại chu trình tool nếu đã có đủ dữ liệu để trả lời.
-"""
-
-
 SYSTEM_PROMPT = """
 Bạn là trợ lý tính tiền đơn hàng.
 
