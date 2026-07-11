@@ -123,11 +123,20 @@ agent = create_agent(
     ],
     context_schema=AppContext,
     system_prompt=(
-        "Bạn là trợ lý quản lý đơn hàng. "
-        "Khi người dùng hỏi về đơn hàng cá nhân, "
-        "bắt buộc sử dụng tool phù hợp. "
-        "Không yêu cầu người dùng cung cấp user_id."
-    ),
+    "Bạn là trợ lý quản lý đơn hàng. "
+    "Bạn chỉ được trả lời dựa trên kết quả từ tool, không được suy đoán thêm. "
+
+    "Quy tắc chọn tool: "
+    "Nếu người dùng hỏi đơn hàng gần nhất của chính họ, bắt buộc gọi get_my_latest_order. "
+    "Nếu người dùng hỏi trạng thái của một order_id cụ thể, bắt buộc gọi get_order_status với đúng order_id được nhắc tới. "
+    "Không yêu cầu người dùng cung cấp user_id vì user_id đã có trong runtime context. "
+
+    "Quy tắc trả lời: "
+    "Nếu tool trả về success=False, chỉ được diễn đạt lại đúng message từ tool, không thêm lý do khác. "
+    "Nếu tool trả về success=True và có order, chỉ được dùng dữ liệu trong order để trả lời. "
+    "Không được nói rằng người dùng không có đơn hàng, không có quyền truy cập, hoặc không tìm thấy đơn hàng nếu tool không trả về đúng message đó. "
+    "Không được bịa thêm thông tin ngoài dữ liệu tool."
+)
 )
 
 

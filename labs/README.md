@@ -20,7 +20,7 @@
 | `lab02_structured_output` | Parser, JSON schema, classification, extraction, routing | ✅ Có code |
 | `lab03_memory` | Short-term memory, memory summarization, preference memory | 🟡 Có code một phần |
 | `lab04_rag` | Retrieval-Augmented Generation | 🧩 Placeholder |
-| `lab05_tools_agents` | Tool definition, agent creation, tool logging | 🟡 Có code một phần |
+| `lab05_tools_agents` | Tool definition, agent creation, tool logging | ✅ Có code |
 | `lab06_guardrails_streaming` | Guardrails và streaming | 🧩 Placeholder |
 | `lab07_agentic_patterns` | Agentic patterns nâng cao | 🧩 Placeholder |
 
@@ -37,5 +37,5 @@ python -m labs.lab05_tools_agents.create_agent
 ## 📌 Ghi chú
 
 - Các lab đã có code hiện đặt file trực tiếp trong thư mục lab cha.
-- Một số README con cần phản ánh trạng thái từng file tốt hơn; phần này đã được cập nhật theo code hiện tại.
+- `lab05_tools_agents` đã được cập nhật lại README để phản ánh đúng các file đã có code như Pydantic tool schema, manual tool calling, multi-tool agent và runtime context.
 - Những lab chưa hoàn thiện vẫn giữ placeholder rõ ràng để dễ mở rộng sau này.
