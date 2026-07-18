@@ -6,12 +6,11 @@
 
 | File | Trạng thái | Cách chạy |
 | --- | --- | --- |
-| `model_and_agent_streaming.py` | 🧩 Placeholder | `python -m labs.lab06_guardrails_streaming.model_and_agent_streaming` |
-| `custom_progress_stream.py` | 🧩 Placeholder | `python -m labs.lab06_guardrails_streaming.custom_progress_stream` |
-| `pii_guardrail.py` | 🧩 Placeholder | `python -m labs.lab06_guardrails_streaming.pii_guardrail` |
-| `tool_retry.py` | 🧩 Placeholder | `python -m labs.lab06_guardrails_streaming.tool_retry` |
-| `human_approval.py` | 🧩 Placeholder | `python -m labs.lab06_guardrails_streaming.human_approval` |
+| `model_and_agent_streaming.py` | ✅ Đã có demo stream output từ model và agent, đồng thời in tiến trình gọi tool theo event stream | `python -m labs.lab06_guardrails_streaming.model_and_agent_streaming` |
+| `tool_retry.py` | ✅ Đã có demo retry tool bằng `ToolRetryMiddleware` với lỗi tạm thời từ API giả lập | `python -m labs.lab06_guardrails_streaming.tool_retry` |
 
 ## 📌 Ghi chú
 
-Phần này hiện đang ở giai đoạn dựng khung. Sau khi hoàn thiện, lab sẽ tập trung vào streaming token, kiểm soát dữ liệu nhạy cảm, retry strategy và human-in-the-loop.
+- `model_and_agent_streaming.py` phù hợp để quan sát sự khác nhau giữa `llm.stream(...)` và `agent.stream(...)`, cũng như cách đọc event `updates` và `messages`.
+- `tool_retry.py` minh họa cách middleware tự retry khi tool ném `ConnectionError`, rất hữu ích cho các tool gọi API ngoài.
+- Lab này hiện đã có code một phần. Các chủ đề như `PII guardrail`, `human approval` hay custom progress stream riêng vẫn chưa được bổ sung thành file độc lập.

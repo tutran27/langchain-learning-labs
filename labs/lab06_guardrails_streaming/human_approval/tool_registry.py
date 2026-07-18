@@ -29,7 +29,7 @@ def check_refund_eligible(order_id: str):
     Tool này chỉ kiểm tra và không thực hiện hoàn tiền.
     """
     evaluation = evaluate_refund(order_id)
-    return {
+    return { 
         "order_id": order_id,
         "refund_reason": evaluation.get('reason'),
         **evaluation

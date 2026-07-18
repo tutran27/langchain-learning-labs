@@ -14,4 +14,5 @@
 
 - `short_term_memory.py` đang dùng `RunnableWithMessageHistory` để mô phỏng hội thoại nhiều lượt.
 - `memory_summarization.py` đã có hướng tiếp cận tóm tắt lịch sử hội thoại khi message dài dần.
+- Các ví dụ trong lab này vẫn đang ở trạng thái chuyển tiếp và có thể cần đồng bộ lại với model wrapper hiện tại trong `lab01_foundation/llm_model.py` trước khi chạy trực tiếp.
 - Lab này hiện ở trạng thái có code một phần, phù hợp để tiếp tục mở rộng thêm preference memory hoặc multi-user session.

@@ -21,7 +21,7 @@
 | `lab03_memory` | Short-term memory, memory summarization, preference memory | 🟡 Có code một phần |
 | `lab04_rag` | Retrieval-Augmented Generation | 🧩 Placeholder |
 | `lab05_tools_agents` | Tool definition, agent creation, tool logging | ✅ Có code |
-| `lab06_guardrails_streaming` | Guardrails và streaming | 🧩 Placeholder |
+| `lab06_guardrails_streaming` | Guardrails và streaming | 🟡 Có code một phần |
 | `lab07_agentic_patterns` | Agentic patterns nâng cao | 🧩 Placeholder |
 
 ## ▶️ Ví dụ lệnh chạy
@@ -32,10 +32,12 @@ python -m labs.lab01_foundation.lcel_basic
 python -m labs.lab02_structured_output.classification_chain
 python -m labs.lab03_memory.short_term_memory
 python -m labs.lab05_tools_agents.create_agent
+python -m labs.lab06_guardrails_streaming.model_and_agent_streaming
 ```
 
 ## 📌 Ghi chú
 
 - Các lab đã có code hiện đặt file trực tiếp trong thư mục lab cha.
 - `lab05_tools_agents` đã được cập nhật lại README để phản ánh đúng các file đã có code như Pydantic tool schema, manual tool calling, multi-tool agent và runtime context.
+- `lab06_guardrails_streaming` hiện đã có demo cho streaming model/agent và retry middleware cho tool, nhưng vẫn chưa đầy đủ toàn bộ các chủ đề guardrails ban đầu.
 - Những lab chưa hoàn thiện vẫn giữ placeholder rõ ràng để dễ mở rộng sau này.
