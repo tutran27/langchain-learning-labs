@@ -73,7 +73,7 @@ class HFLLMModel:
 
 
 class GroqLLMModel:
-    def __init__(self):
+    def __init__(self):  
         self.groq_llm = None
 
     def groq_chat(self):
